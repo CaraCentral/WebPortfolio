@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 @Component({
@@ -7,8 +7,21 @@ import { Title } from '@angular/platform-browser';
   styleUrl: './resume.component.css'
 })
 export class ResumeComponent {
-  constructor(private titleService: Title){
+
+  isEducationOpen: boolean = false;
+  isSkillsOpen: boolean = false;
+
+  constructor(private titleService: Title, private renderer: Renderer2){
     this.titleService.setTitle('Cara Roche - Resume')
   }
 
+  DownloadFile(){
+    const link = this.renderer.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'Resume.PDF');
+    link.setAttribute('download', 'Resume.pdf');
+    link.click();
+    link.remove();
+
+  }
 }

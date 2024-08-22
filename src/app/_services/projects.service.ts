@@ -8,9 +8,9 @@ import { Tag } from '../_models/Tag';
 export class ProjectsService {
   
   projects: Project[] = [
-    {id:0, name: "Web Portfolio", pictures: ["projImg1.png","projImg2.png","projImg3.png"], projectLink: "https://github.com/CaraCentral/WebPortfolio", summary:"A website to show off my expertise.", description: "uhhh, yeah what I said", tags: [Tag.ANGULAR, Tag.TYPESCRIPT]},
+    {id:0, name: "Web Portfolio", pictures: ["projImg1.png","projImg2.png","projImg3.png"], projectLink: "https://github.com/CaraCentral/WebPortfolio", summary:"A website to show off my coding experience.", description: "uhhh, yeah what I said", tags: [Tag.ANGULAR, Tag.TYPESCRIPT]},
     {id:1, name: "Review Website", pictures: ["projImg1.png","projImg2.png","projImg3.png"], projectLink: "", summary:"A website for my video game reviews.", description: "uhhh, yeah what I said", tags: [Tag.ANGULAR, Tag.TYPESCRIPT]},
-
+    {id:2, name: "Test Java Project", pictures: ["projImg1.png","projImg2.png","projImg3.png"], projectLink: "", summary:"Testing for filters", description: "uhhh, yeah what I said", tags: [Tag.JAVA]},
   ];
   constructor() { }
 
@@ -26,5 +26,23 @@ export class ProjectsService {
     }
 
     return project;
+  }
+  getProjectsByFilter(filterTags: Tag[]){
+    let filteredProjects: Project[] = [];
+
+    this.projects.forEach(function (project){
+      let foundAll = true;
+
+      filterTags.forEach(function (filterTag){
+        if (project.tags.includes(filterTag) == false){
+          foundAll = false;
+        }
+      });
+
+      if(foundAll){
+        filteredProjects.push(project);
+      }
+    });
+    return filteredProjects;
   }
 }
