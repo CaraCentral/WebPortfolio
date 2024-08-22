@@ -3,11 +3,11 @@
     <button class="btn-close" (click)="bsModalRef.hide()"></button>
 </div>
 <div class="modal-body">
-    <carousel>
+   <carousel>
         <div *ngFor="let picture of project.pictures">
             <slide><img src={{picture}} alt="Project Image" style="display: block; width:100%"></slide>
         </div>
-    </carousel>
+    </carousel> 
 
     <h3 class="mt-2">Description</h3>
     <p>{{project.description}}</p>

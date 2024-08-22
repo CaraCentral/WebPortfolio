@@ -22,6 +22,5 @@ export class ResumeComponent {
     link.setAttribute('download', 'Resume.pdf');
     link.click();
     link.remove();
-
-  }
+  } 
 }

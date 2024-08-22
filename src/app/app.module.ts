@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,7 +14,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ProjectModalComponent } from './project-modal/project-modal.component';
 import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {CollapseModule} from 'ngx-bootstrap/collapse';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 
 @NgModule({
@@ -38,7 +37,7 @@ import {AccordionModule} from 'ngx-bootstrap/accordion';
     CarouselModule.forRoot(),
     CollapseModule.forRoot(),
     AccordionModule.forRoot(),
-    FormsModule,
+    FormsModule
   
   ],
   providers: [
