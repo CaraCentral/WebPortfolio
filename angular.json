@@ -110,7 +110,7 @@
         "deploy": {
           "builder": "@netlify-builder/deploy:deploy",
           "options": {
-            "outputPath": "dist/angular-portfolio",
+            "outputPath": "dist/",
             "netlifyToken": "nfp_v4bjgAKwYxKf94KEHGZo7Ndf2grFjud12b3a",
             "siteId": "7e426a1a-b482-4296-94d1-fbf294937841"
           }
