@@ -108,11 +108,9 @@
           }
         },
         "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
+          "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "outputPath": "dist/",
-            "netlifyToken": "nfp_v4bjgAKwYxKf94KEHGZo7Ndf2grFjud12b3a",
-            "siteId": "7e426a1a-b482-4296-94d1-fbf294937841"
+            "buildTarget": "AngularPortfolio:build:production"
           }
         }
       }
